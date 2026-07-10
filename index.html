@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Bourbon Coffee — Кофейня в Баку</title>
   <meta name="description" content="Bourbon Coffee — премиальная кофейня на 5 этаже ТЦ 28 Mall, Баку. Рейтинг 4,9. Еда в заведении, навынос и доставка.">
 
@@ -59,8 +59,8 @@
   <!-- Navbar -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
     <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
-    <nav class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
-      <a href="#" class="font-serif text-xl lg:text-2xl font-semibold tracking-wide text-cream-50 hover:text-gold-400 transition-colors">
+    <nav class="site-nav max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 md:py-5 flex items-center justify-between">
+      <a href="#" class="site-logo font-serif text-lg sm:text-xl lg:text-2xl font-semibold tracking-wide text-cream-50 hover:text-gold-400 transition-colors">
         Bourbon Coffee
       </a>
 
@@ -87,11 +87,11 @@
     </nav>
 
     <div id="mobile-menu" class="md:hidden hidden bg-coffee-900/95 backdrop-blur-xl border-t border-cream-100/10">
-      <ul class="px-6 py-4 space-y-4 text-sm font-medium">
-        <li><a href="#menu" class="nav-link block py-2" data-i18n="nav.menu">Меню</a></li>
-        <li><a href="#about" class="nav-link block py-2" data-i18n="nav.about">О нас</a></li>
-        <li><a href="#reviews" class="nav-link block py-2" data-i18n="nav.reviews">Отзывы</a></li>
-        <li><a href="#contacts" class="nav-link block py-2" data-i18n="nav.contacts">Контакты</a></li>
+      <ul class="px-4 py-4 space-y-1 text-sm font-medium">
+        <li><a href="#menu" class="nav-link block py-3 px-2" data-i18n="nav.menu">Меню</a></li>
+        <li><a href="#about" class="nav-link block py-3 px-2" data-i18n="nav.about">О нас</a></li>
+        <li><a href="#reviews" class="nav-link block py-3 px-2" data-i18n="nav.reviews">Отзывы</a></li>
+        <li><a href="#contacts" class="nav-link block py-3 px-2" data-i18n="nav.contacts">Контакты</a></li>
       </ul>
     </div>
   </header>
@@ -117,18 +117,18 @@
         <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8cb749e394.mp3" type="audio/mpeg">
       </audio>
 
-      <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pb-16 lg:pb-24 pt-32">
-        <div class="grid lg:grid-cols-12 gap-8 lg:gap-4 items-end">
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-12 sm:pb-16 lg:pb-24 pt-24 sm:pt-32">
+        <div class="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-4 items-end">
           <div class="lg:col-span-7">
-            <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-4 font-medium hero-tagline" data-i18n="hero.tagline">Премиальная кофейня</p>
+            <p class="text-gold-400 text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase mb-3 sm:mb-4 font-medium hero-tagline" data-i18n="hero.tagline">Премиальная кофейня</p>
             <h1 class="hero-title font-serif font-bold text-cream-50 leading-[0.9] tracking-tight">
               <span class="hero-word"><span class="hero-word-inner">Bourbon</span></span>
               <span class="hero-word"><span class="hero-word-inner">Coffee</span></span>
             </h1>
           </div>
 
-          <div class="lg:col-span-5 lg:text-right reveal reveal-delay-1">
-            <div class="glass-card inline-block text-left lg:text-right p-6 lg:p-8 max-w-md lg:ml-auto">
+          <div class="lg:col-span-5 lg:text-right reveal reveal-delay-1 mt-4 lg:mt-0">
+            <div class="glass-card hero-info-card inline-block w-full text-left lg:text-right p-5 sm:p-6 lg:p-8 max-w-md lg:ml-auto">
               <div class="flex items-center gap-2 mb-3 lg:justify-end">
                 <span class="text-gold-400 text-lg">★</span>
                 <span class="text-cream-50 font-medium">4,9</span>
@@ -142,9 +142,9 @@
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4 mt-10 lg:mt-14 hero-cta-row">
-          <a href="#menu" class="btn-primary magnetic-btn cursor-hover" data-i18n="hero.cta_menu">Меню</a>
-          <a href="#contacts" class="btn-secondary magnetic-btn cursor-hover" data-i18n="hero.cta_directions">Как добраться</a>
+        <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-10 lg:mt-14 hero-cta-row">
+          <a href="#menu" class="btn-primary magnetic-btn cursor-hover hero-cta-btn" data-i18n="hero.cta_menu">Меню</a>
+          <a href="#contacts" class="btn-secondary magnetic-btn cursor-hover hero-cta-btn" data-i18n="hero.cta_directions">Как добраться</a>
         </div>
       </div>
     </section>
@@ -152,10 +152,10 @@
     <!-- 2. MENU -->
     <section id="menu" class="section-padding relative">
       <div class="absolute inset-0 bg-gradient-to-b from-coffee-900 via-forest-900/40 to-coffee-900 pointer-events-none"></div>
-      <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-        <div class="mb-12 lg:mb-16 reveal">
-          <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="menu.label">Меню</p>
-          <h2 class="font-serif text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="menu.title">Напитки</h2>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="mb-8 sm:mb-12 lg:mb-16 reveal">
+          <p class="text-gold-400 text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase mb-3" data-i18n="menu.label">Меню</p>
+          <h2 class="section-title font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="menu.title">Напитки</h2>
           <p class="mt-4 text-cream-200/60 max-w-xl" data-i18n="menu.subtitle">Средний чек 1–10 ₼ на человека</p>
         </div>
 
@@ -170,13 +170,13 @@
     <!-- 3. ABOUT -->
     <section id="about" class="section-padding relative overflow-hidden">
       <div class="organic-blob organic-blob-1"></div>
-      <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
-        <div class="text-center mb-16 reveal">
-          <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="about.label">О нас</p>
-          <h2 class="font-serif text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="about.title">Почему Bourbon Coffee</h2>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative">
+        <div class="text-center mb-10 sm:mb-16 reveal">
+          <p class="text-gold-400 text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase mb-3" data-i18n="about.label">О нас</p>
+          <h2 class="section-title font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="about.title">Почему Bourbon Coffee</h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div class="grid md:grid-cols-3 gap-4 sm:gap-8 lg:gap-12">
           <div class="about-card reveal">
             <div class="about-icon">
               <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,30 +212,30 @@
 
     <!-- 4. SERVICES -->
     <section id="services" class="section-padding relative">
-      <div class="max-w-7xl mx-auto px-6 lg:px-10">
-        <div class="mb-16 reveal">
-          <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="services.label">Формат</p>
-          <h2 class="font-serif text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="services.title">Как мы работаем</h2>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="mb-10 sm:mb-16 reveal">
+          <p class="text-gold-400 text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase mb-3" data-i18n="services.label">Формат</p>
+          <h2 class="section-title font-serif text-3xl sm:text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="services.title">Как мы работаем</h2>
         </div>
 
         <!-- Row 1 -->
-        <div class="service-row grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20 lg:mb-28 reveal">
+        <div class="service-row grid lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-20 lg:mb-28 reveal">
           <div class="service-image-wrapper order-2 lg:order-1">
             <div class="service-image service-image-1 rounded-3xl cursor-hover"></div>
           </div>
           <div class="order-1 lg:order-2">
             <span class="text-gold-400 text-sm font-medium tracking-widest uppercase" data-i18n="services.row1.label">01</span>
-            <h3 class="font-serif text-3xl lg:text-4xl text-cream-50 mt-3 mb-4" data-i18n="services.row1.title">Еда в заведении</h3>
-            <p class="text-cream-200/60 leading-relaxed text-lg" data-i18n="services.row1.desc">Насладитесь кофе и закусками в комфортном зале на 5 этаже 28 Mall. Спокойная обстановка для работы, встреч и отдыха.</p>
+            <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-cream-50 mt-3 mb-3 sm:mb-4" data-i18n="services.row1.title">Еда в заведении</h3>
+            <p class="text-cream-200/60 leading-relaxed text-base sm:text-lg" data-i18n="services.row1.desc">Насладитесь кофе и закусками в комфортном зале на 5 этаже 28 Mall. Спокойная обстановка для работы, встреч и отдыха.</p>
           </div>
         </div>
 
         <!-- Row 2 -->
-        <div class="service-row grid lg:grid-cols-2 gap-10 lg:gap-16 items-center reveal">
+        <div class="service-row grid lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-center reveal">
           <div>
             <span class="text-gold-400 text-sm font-medium tracking-widest uppercase" data-i18n="services.row2.label">02</span>
-            <h3 class="font-serif text-3xl lg:text-4xl text-cream-50 mt-3 mb-4" data-i18n="services.row2.title">Навынос и доставка</h3>
-            <p class="text-cream-200/60 leading-relaxed text-lg" data-i18n="services.row2.desc">Заберите заказ с собой или воспользуйтесь бесконтактной доставкой — быстро, удобно и без лишних хлопот.</p>
+            <h3 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-cream-50 mt-3 mb-3 sm:mb-4" data-i18n="services.row2.title">Навынос и доставка</h3>
+            <p class="text-cream-200/60 leading-relaxed text-base sm:text-lg" data-i18n="services.row2.desc">Заберите заказ с собой или воспользуйтесь бесконтактной доставкой — быстро, удобно и без лишних хлопот.</p>
           </div>
           <div class="service-image-wrapper">
             <div class="map-embed rounded-3xl cursor-hover">
@@ -255,9 +255,9 @@
     <!-- 5. REVIEWS -->
     <section id="reviews" class="section-padding relative overflow-hidden">
       <div class="organic-blob organic-blob-2"></div>
-      <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <div class="lg:col-span-4 reveal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative">
+        <div class="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-start">
+          <div class="lg:col-span-4 reveal reviews-rating-block">
             <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="reviews.label">Отзывы</p>
             <div class="rating-display">
               <span id="rating-number" class="rating-number font-serif" data-rating="4.9">0</span>
@@ -298,7 +298,7 @@
 
   <!-- 6. FOOTER -->
   <footer id="contacts" class="relative border-t border-cream-100/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 lg:py-20">
       <div class="mb-12 reveal">
         <h3 class="text-gold-400 text-xs tracking-[0.2em] uppercase mb-4" data-i18n="footer.map_title">Как нас найти</h3>
         <div class="map-embed map-embed-footer rounded-2xl">
@@ -312,9 +312,9 @@
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-        <div class="lg:col-span-2">
-          <h2 class="font-serif text-3xl text-cream-50 mb-3">Bourbon Coffee</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-8 footer-grid">
+        <div class="sm:col-span-2 lg:col-span-2">
+          <h2 class="font-serif text-2xl sm:text-3xl text-cream-50 mb-3">Bourbon Coffee</h2>
           <p class="text-cream-200/50 text-sm leading-relaxed max-w-sm" data-i18n="footer.slogan">Где каждая чашка — маленькое удовольствие</p>
         </div>
 

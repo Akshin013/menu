@@ -447,6 +447,7 @@ function initMenuTabs() {
       btn.classList.toggle('active', isActive);
       btn.setAttribute('aria-selected', isActive);
     });
+    tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     renderMenuGrid(true);
   });
 
