@@ -52,8 +52,13 @@
 </head>
 <body class="font-sans bg-coffee-900 text-cream-100 antialiased overflow-x-hidden">
 
+  <!-- Custom cursor (desktop only) -->
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" class="cursor-ring" aria-hidden="true"></div>
+
   <!-- Navbar -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
     <nav class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
       <a href="#" class="font-serif text-xl lg:text-2xl font-semibold tracking-wide text-cream-50 hover:text-gold-400 transition-colors">
         Bourbon Coffee
@@ -103,12 +108,22 @@
       </video>
       <div class="hero-overlay absolute inset-0"></div>
 
+      <!-- Ambient sound toggle -->
+      <button id="sound-toggle" class="sound-toggle cursor-hover" type="button" aria-label="Включить звук" data-i18n-aria="hero.sound_on">
+        <span class="sound-icon sound-icon-off" aria-hidden="true">🔇</span>
+        <span class="sound-icon sound-icon-on hidden" aria-hidden="true">🔊</span>
+      </button>
+      <audio id="ambient-audio" loop preload="none">
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8cb749e394.mp3" type="audio/mpeg">
+      </audio>
+
       <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pb-16 lg:pb-24 pt-32">
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-4 items-end">
-          <div class="lg:col-span-7 reveal">
-            <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-4 font-medium" data-i18n="hero.tagline">Премиальная кофейня</p>
+          <div class="lg:col-span-7">
+            <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-4 font-medium hero-tagline" data-i18n="hero.tagline">Премиальная кофейня</p>
             <h1 class="hero-title font-serif font-bold text-cream-50 leading-[0.9] tracking-tight">
-              Bourbon<br>Coffee
+              <span class="hero-word"><span class="hero-word-inner">Bourbon</span></span>
+              <span class="hero-word"><span class="hero-word-inner">Coffee</span></span>
             </h1>
           </div>
 
@@ -127,9 +142,9 @@
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-4 mt-10 lg:mt-14 reveal reveal-delay-2">
-          <a href="#menu" class="btn-primary" data-i18n="hero.cta_menu">Меню</a>
-          <a href="#contacts" class="btn-secondary" data-i18n="hero.cta_directions">Как добраться</a>
+        <div class="flex flex-wrap gap-4 mt-10 lg:mt-14 hero-cta-row">
+          <a href="#menu" class="btn-primary magnetic-btn cursor-hover" data-i18n="hero.cta_menu">Меню</a>
+          <a href="#contacts" class="btn-secondary magnetic-btn cursor-hover" data-i18n="hero.cta_directions">Как добраться</a>
         </div>
       </div>
     </section>
@@ -145,28 +160,28 @@
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <article class="menu-card glass-card reveal">
+          <article class="menu-card glass-card reveal cursor-hover">
             <div class="menu-card-icon">☕</div>
             <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item1.title">Эспрессо</h3>
             <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item1.desc">Классический двойной шот из отборных зёрен</p>
             <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
           </article>
 
-          <article class="menu-card glass-card reveal reveal-delay-1">
+          <article class="menu-card glass-card reveal reveal-delay-1 cursor-hover">
             <div class="menu-card-icon">🥛</div>
             <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item2.title">Капучино</h3>
             <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item2.desc">Нежная молочная пена и сбалансированный вкус</p>
             <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
           </article>
 
-          <article class="menu-card glass-card reveal reveal-delay-2">
+          <article class="menu-card glass-card reveal reveal-delay-2 cursor-hover">
             <div class="menu-card-icon">🍫</div>
             <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item3.title">Латте</h3>
             <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item3.desc">Мягкий кофе с кремовой текстурой молока</p>
             <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
           </article>
 
-          <article class="menu-card glass-card reveal reveal-delay-3">
+          <article class="menu-card glass-card reveal reveal-delay-3 cursor-hover">
             <div class="menu-card-icon">🧊</div>
             <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item4.title">Айс-латте</h3>
             <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item4.desc">Освежающий холодный напиток для любого времени</p>
@@ -230,7 +245,7 @@
         <!-- Row 1 -->
         <div class="service-row grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20 lg:mb-28 reveal">
           <div class="service-image-wrapper order-2 lg:order-1">
-            <div class="service-image service-image-1 rounded-3xl"></div>
+            <div class="service-image service-image-1 rounded-3xl cursor-hover"></div>
           </div>
           <div class="order-1 lg:order-2">
             <span class="text-gold-400 text-sm font-medium tracking-widest uppercase" data-i18n="services.row1.label">01</span>
@@ -247,7 +262,15 @@
             <p class="text-cream-200/60 leading-relaxed text-lg" data-i18n="services.row2.desc">Заберите заказ с собой или воспользуйтесь бесконтактной доставкой — быстро, удобно и без лишних хлопот.</p>
           </div>
           <div class="service-image-wrapper">
-            <div class="service-image service-image-2 rounded-3xl"></div>
+            <div class="map-embed rounded-3xl cursor-hover">
+              <iframe
+                src="https://maps.google.com/maps?q=28+Mall,+Azadlig+Avenue+4,+Baku,+Azerbaijan&hl=ru&z=16&output=embed"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Bourbon Coffee — 28 Mall, Baku"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
@@ -261,27 +284,33 @@
           <div class="lg:col-span-4 reveal">
             <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="reviews.label">Отзывы</p>
             <div class="rating-display">
-              <span class="rating-number font-serif">4,9</span>
+              <span id="rating-number" class="rating-number font-serif" data-rating="4.9">0</span>
               <span class="rating-star text-gold-400">★</span>
             </div>
             <p class="text-cream-200/60 mt-2 text-lg" data-i18n="reviews.count">из 56 отзывов</p>
           </div>
 
           <div class="lg:col-span-8 grid sm:grid-cols-1 md:grid-cols-3 gap-6">
-            <blockquote class="review-card glass-card reveal">
-              <div class="text-gold-400 mb-4 text-lg">★★★★★</div>
+            <blockquote class="review-card glass-card reveal cursor-hover">
+              <div class="review-stars text-gold-400 mb-4 text-lg" aria-label="5 stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
               <p class="text-cream-200/80 text-sm leading-relaxed mb-6" data-i18n="reviews.r1.text">«Отличное место для отдыха с чашкой кофе. Уютно и спокойно.»</p>
               <footer class="text-cream-50 font-medium text-sm" data-i18n="reviews.r1.author">— Эльвин М.</footer>
             </blockquote>
 
-            <blockquote class="review-card glass-card reveal reveal-delay-1">
-              <div class="text-gold-400 mb-4 text-lg">★★★★★</div>
+            <blockquote class="review-card glass-card reveal reveal-delay-1 cursor-hover">
+              <div class="review-stars text-gold-400 mb-4 text-lg" aria-label="5 stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
               <p class="text-cream-200/80 text-sm leading-relaxed mb-6" data-i18n="reviews.r2.text">«Внимательный сервис и приятная атмосфера. Обязательно вернусь.»</p>
               <footer class="text-cream-50 font-medium text-sm" data-i18n="reviews.r2.author">— Лейла К.</footer>
             </blockquote>
 
-            <blockquote class="review-card glass-card reveal reveal-delay-2">
-              <div class="text-gold-400 mb-4 text-lg">★★★★★</div>
+            <blockquote class="review-card glass-card reveal reveal-delay-2 cursor-hover">
+              <div class="review-stars text-gold-400 mb-4 text-lg" aria-label="5 stars">
+                <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+              </div>
               <p class="text-cream-200/80 text-sm leading-relaxed mb-6" data-i18n="reviews.r3.text">«Удобное расположение в ТЦ, вкусный кофе и быстрое обслуживание.»</p>
               <footer class="text-cream-50 font-medium text-sm" data-i18n="reviews.r3.author">— Руслан А.</footer>
             </blockquote>
@@ -294,6 +323,19 @@
   <!-- 6. FOOTER -->
   <footer id="contacts" class="relative border-t border-cream-100/10">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+      <div class="mb-12 reveal">
+        <h3 class="text-gold-400 text-xs tracking-[0.2em] uppercase mb-4" data-i18n="footer.map_title">Как нас найти</h3>
+        <div class="map-embed map-embed-footer rounded-2xl">
+          <iframe
+            src="https://maps.google.com/maps?q=28+Mall,+Azadlig+Avenue+4,+Baku,+Azerbaijan&hl=ru&z=16&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Bourbon Coffee — 28 Mall, Baku"
+          ></iframe>
+        </div>
+      </div>
+
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
         <div class="lg:col-span-2">
           <h2 class="font-serif text-3xl text-cream-50 mb-3">Bourbon Coffee</h2>
@@ -330,6 +372,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Sticky mobile CTA -->
+  <a href="#menu" id="mobile-order-btn" class="mobile-order-btn cursor-hover" data-i18n="mobile.order">Заказать</a>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

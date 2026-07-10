@@ -12,6 +12,8 @@ const translations = {
     'hero.hours': 'Открыто до 23:00',
     'hero.cta_menu': 'Меню',
     'hero.cta_directions': 'Как добраться',
+    'hero.sound_on': 'Включить звук',
+    'hero.sound_off': 'Выключить звук',
 
     'menu.label': 'Популярное',
     'menu.title': 'Меню',
@@ -62,6 +64,8 @@ const translations = {
     'footer.website': 'Сайт clps.cc',
     'footer.copyright': '© Bourbon Coffee. Все права защищены.',
     'footer.back_top': 'Наверх ↑',
+    'footer.map_title': 'Как нас найти',
+    'mobile.order': 'Заказать',
   },
 
   az: {
@@ -76,6 +80,8 @@ const translations = {
     'hero.hours': '23:00-a qədər açıqdır',
     'hero.cta_menu': 'Menyu',
     'hero.cta_directions': 'Necə çatmaq olar',
+    'hero.sound_on': 'Səsi yandır',
+    'hero.sound_off': 'Səsi söndür',
 
     'menu.label': 'Məşhur',
     'menu.title': 'Menyu',
@@ -126,6 +132,8 @@ const translations = {
     'footer.website': 'Sayt clps.cc',
     'footer.copyright': '© Bourbon Coffee. Bütün hüquqlar qorunur.',
     'footer.back_top': 'Yuxarı ↑',
+    'footer.map_title': 'Bizi necə tapmaq olar',
+    'mobile.order': 'Sifariş et',
   },
 };
 
@@ -146,8 +154,249 @@ function setLanguage(lang) {
     }
   });
 
+  document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-aria');
+    if (translations[lang][key] && !el.classList.contains('is-playing')) {
+      el.setAttribute('aria-label', translations[lang][key]);
+    }
+  });
+
+  const soundBtn = document.getElementById('sound-toggle');
+  if (soundBtn && soundBtn.classList.contains('is-playing')) {
+    soundBtn.setAttribute('aria-label', translations[lang]['hero.sound_off']);
+  }
+
   document.getElementById('lang-az').classList.toggle('active', lang === 'az');
   document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+}
+
+/* ===== Custom Cursor ===== */
+function initCustomCursor() {
+  const dot = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  if (!dot || !ring) return;
+
+  const isTouch = window.matchMedia('(hover: none), (max-width: 1024px)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isTouch || reducedMotion) return;
+
+  document.body.classList.add('custom-cursor-active');
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let ringX = 0;
+  let ringY = 0;
+
+  const hoverTargets = '.cursor-hover, .btn-primary, .btn-secondary, .btn-ghost, .nav-link, .glass-card, .about-card, .lang-btn, .sound-toggle, .mobile-order-btn, .footer-link';
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
+
+    if (e.target.closest(hoverTargets)) {
+      ring.classList.add('cursor-hovering');
+    } else {
+      ring.classList.remove('cursor-hovering');
+    }
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.15;
+    ringY += (mouseY - ringY) * 0.15;
+    ring.style.left = `${ringX}px`;
+    ring.style.top = `${ringY}px`;
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+}
+
+/* ===== Magnetic Buttons ===== */
+function initMagneticButtons() {
+  const buttons = document.querySelectorAll('.magnetic-btn');
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  if (isTouch) return;
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+}
+
+/* ===== Scroll Progress ===== */
+function initScrollProgress() {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+
+  function update() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = `${progress}%`;
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+/* ===== Hero Word Reveal ===== */
+function initHeroReveal() {
+  if (typeof gsap === 'undefined') {
+    document.querySelectorAll('.hero-word-inner, .hero-tagline, .hero-cta-row').forEach((el) => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    });
+    return;
+  }
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  tl.to('.hero-word-inner', {
+    y: 0,
+    opacity: 1,
+    duration: 1.1,
+    stagger: 0.18,
+  })
+    .to('.hero-tagline', { y: 0, opacity: 1, duration: 0.7 }, '-=0.5')
+    .to('.hero-cta-row', { y: 0, opacity: 1, duration: 0.7 }, '-=0.4');
+}
+
+/* ===== Blob Parallax ===== */
+function initBlobParallax() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  gsap.utils.toArray('.organic-blob').forEach((blob, i) => {
+    gsap.to(blob, {
+      y: i % 2 === 0 ? 120 : -100,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: blob.parentElement,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.2,
+      },
+    });
+  });
+}
+
+/* ===== Rating Counter ===== */
+function initRatingCounter() {
+  const el = document.getElementById('rating-number');
+  if (!el || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    if (el) el.textContent = '4,9';
+    return;
+  }
+
+  const target = parseFloat(el.dataset.rating || '4.9');
+  const counter = { val: 0 };
+
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 85%',
+    once: true,
+    onEnter: () => {
+      gsap.to(counter, {
+        val: target,
+        duration: 1.2,
+        ease: 'power2.out',
+        onUpdate: () => {
+          el.textContent = counter.val.toFixed(1).replace('.', ',');
+        },
+      });
+    },
+  });
+}
+
+/* ===== Review Stars Stagger ===== */
+function initReviewStars() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+    document.querySelectorAll('.review-stars .star').forEach((star) => {
+      star.style.opacity = '1';
+      star.style.transform = 'none';
+    });
+    return;
+  }
+
+  document.querySelectorAll('.review-stars').forEach((container) => {
+    const stars = container.querySelectorAll('.star');
+
+    ScrollTrigger.create({
+      trigger: container,
+      start: 'top 88%',
+      once: true,
+      onEnter: () => {
+        container.classList.add('is-animated');
+        gsap.to(stars, {
+          opacity: 1,
+          scale: 1,
+          rotation: 0,
+          duration: 0.45,
+          stagger: 0.12,
+          ease: 'back.out(2)',
+        });
+      },
+    });
+  });
+}
+
+/* ===== Ambient Sound ===== */
+function initAmbientSound() {
+  const btn = document.getElementById('sound-toggle');
+  const audio = document.getElementById('ambient-audio');
+  if (!btn || !audio) return;
+
+  audio.volume = 0.18;
+
+  btn.addEventListener('click', async () => {
+    const playing = btn.classList.contains('is-playing');
+
+    if (playing) {
+      audio.pause();
+      btn.classList.remove('is-playing');
+      btn.querySelector('.sound-icon-off').classList.remove('hidden');
+      btn.querySelector('.sound-icon-on').classList.add('hidden');
+      btn.setAttribute('aria-label', translations[currentLang]['hero.sound_on']);
+    } else {
+      try {
+        await audio.play();
+        btn.classList.add('is-playing');
+        btn.querySelector('.sound-icon-off').classList.add('hidden');
+        btn.querySelector('.sound-icon-on').classList.remove('hidden');
+        btn.setAttribute('aria-label', translations[currentLang]['hero.sound_off']);
+      } catch {
+        /* autoplay policy or missing source */
+      }
+    }
+  });
+}
+
+/* ===== Mobile Order Button ===== */
+function initMobileOrderBtn() {
+  const btn = document.getElementById('mobile-order-btn');
+  if (!btn) return;
+
+  const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
+  function update() {
+    if (isMobile() && window.scrollY > window.innerHeight * 0.5) {
+      btn.classList.add('is-visible');
+    } else {
+      btn.classList.remove('is-visible');
+    }
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 }
 
 /* ===== Navbar scroll ===== */
@@ -234,6 +483,10 @@ function initSmoothScroll() {
 
 /* ===== Init ===== */
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
   const savedLang = localStorage.getItem(LANG_KEY);
   setLanguage(savedLang && translations[savedLang] ? savedLang : 'ru');
 
@@ -242,6 +495,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initNavbar();
   initMobileMenu();
+  initCustomCursor();
+  initMagneticButtons();
+  initScrollProgress();
+  initHeroReveal();
+  initBlobParallax();
+  initRatingCounter();
+  initReviewStars();
+  initAmbientSound();
+  initMobileOrderBtn();
   initScrollAnimations();
   initSmoothScroll();
 });
