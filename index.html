@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bourbon Coffee — Кофейня в Баку</title>
+  <meta name="description" content="Bourbon Coffee — премиальная кофейня на 5 этаже ТЦ 28 Mall, Баку. Рейтинг 4,9. Еда в заведении, навынос и доставка.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: {
+              900: '#1a1410',
+              800: '#2c2218',
+              700: '#3d3024',
+              600: '#5c4a38',
+            },
+            forest: {
+              900: '#0f1f17',
+              800: '#1a2e22',
+              700: '#254032',
+            },
+            cream: {
+              50: '#faf7f2',
+              100: '#f5efe6',
+              200: '#ebe3d4',
+            },
+            gold: {
+              400: '#d4a853',
+              500: '#c49a3c',
+              600: '#a67c2a',
+            },
+            graphite: '#1c1c1e',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans bg-coffee-900 text-cream-100 antialiased overflow-x-hidden">
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
+      <a href="#" class="font-serif text-xl lg:text-2xl font-semibold tracking-wide text-cream-50 hover:text-gold-400 transition-colors">
+        Bourbon Coffee
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+        <li><a href="#menu" class="nav-link" data-i18n="nav.menu">Меню</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">О нас</a></li>
+        <li><a href="#reviews" class="nav-link" data-i18n="nav.reviews">Отзывы</a></li>
+        <li><a href="#contacts" class="nav-link" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+
+      <div class="flex items-center gap-4">
+        <div class="lang-switch flex items-center gap-1 text-xs font-semibold tracking-widest">
+          <button id="lang-az" class="lang-btn px-2 py-1 rounded transition-colors" aria-label="Azərbaycan dili">AZ</button>
+          <span class="text-cream-200/30">|</span>
+          <button id="lang-ru" class="lang-btn px-2 py-1 rounded transition-colors active" aria-label="Русский язык">RU</button>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-cream-100" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="md:hidden hidden bg-coffee-900/95 backdrop-blur-xl border-t border-cream-100/10">
+      <ul class="px-6 py-4 space-y-4 text-sm font-medium">
+        <li><a href="#menu" class="nav-link block py-2" data-i18n="nav.menu">Меню</a></li>
+        <li><a href="#about" class="nav-link block py-2" data-i18n="nav.about">О нас</a></li>
+        <li><a href="#reviews" class="nav-link block py-2" data-i18n="nav.reviews">Отзывы</a></li>
+        <li><a href="#contacts" class="nav-link block py-2" data-i18n="nav.contacts">Контакты</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO -->
+    <section id="hero" class="relative min-h-screen flex items-end overflow-hidden">
+      <video
+        class="hero-video absolute inset-0 w-full h-full object-cover"
+        autoplay muted loop playsinline
+        poster=""
+      >
+        <source src="video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay absolute inset-0"></div>
+
+      <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pb-16 lg:pb-24 pt-32">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-4 items-end">
+          <div class="lg:col-span-7 reveal">
+            <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-4 font-medium" data-i18n="hero.tagline">Премиальная кофейня</p>
+            <h1 class="hero-title font-serif font-bold text-cream-50 leading-[0.9] tracking-tight">
+              Bourbon<br>Coffee
+            </h1>
+          </div>
+
+          <div class="lg:col-span-5 lg:text-right reveal reveal-delay-1">
+            <div class="glass-card inline-block text-left lg:text-right p-6 lg:p-8 max-w-md lg:ml-auto">
+              <div class="flex items-center gap-2 mb-3 lg:justify-end">
+                <span class="text-gold-400 text-lg">★</span>
+                <span class="text-cream-50 font-medium">4,9</span>
+                <span class="text-cream-200/60 text-sm" data-i18n="hero.reviews_count">(56 отзывов)</span>
+              </div>
+              <p class="text-cream-200/80 text-sm leading-relaxed mb-2" data-i18n="hero.address">
+                5 этаж ТЦ 28 Mall (этаж кинотеатра), пр. Азадлыг 4, Баку
+              </p>
+              <p class="text-gold-400/90 text-sm font-medium" data-i18n="hero.hours">Открыто до 23:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 mt-10 lg:mt-14 reveal reveal-delay-2">
+          <a href="#menu" class="btn-primary" data-i18n="hero.cta_menu">Меню</a>
+          <a href="#contacts" class="btn-secondary" data-i18n="hero.cta_directions">Как добраться</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. MENU -->
+    <section id="menu" class="section-padding relative">
+      <div class="absolute inset-0 bg-gradient-to-b from-coffee-900 via-forest-900/40 to-coffee-900 pointer-events-none"></div>
+      <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="mb-16 reveal">
+          <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="menu.label">Популярное</p>
+          <h2 class="font-serif text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="menu.title">Меню</h2>
+          <p class="mt-4 text-cream-200/60 max-w-xl" data-i18n="menu.subtitle">Средний чек 1–10 ₼ на человека</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article class="menu-card glass-card reveal">
+            <div class="menu-card-icon">☕</div>
+            <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item1.title">Эспрессо</h3>
+            <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item1.desc">Классический двойной шот из отборных зёрен</p>
+            <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
+          </article>
+
+          <article class="menu-card glass-card reveal reveal-delay-1">
+            <div class="menu-card-icon">🥛</div>
+            <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item2.title">Капучино</h3>
+            <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item2.desc">Нежная молочная пена и сбалансированный вкус</p>
+            <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
+          </article>
+
+          <article class="menu-card glass-card reveal reveal-delay-2">
+            <div class="menu-card-icon">🍫</div>
+            <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item3.title">Латте</h3>
+            <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item3.desc">Мягкий кофе с кремовой текстурой молока</p>
+            <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
+          </article>
+
+          <article class="menu-card glass-card reveal reveal-delay-3">
+            <div class="menu-card-icon">🧊</div>
+            <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item4.title">Айс-латте</h3>
+            <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item4.desc">Освежающий холодный напиток для любого времени</p>
+            <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ABOUT -->
+    <section id="about" class="section-padding relative overflow-hidden">
+      <div class="organic-blob organic-blob-1"></div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+        <div class="text-center mb-16 reveal">
+          <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="about.label">О нас</p>
+          <h2 class="font-serif text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="about.title">Почему Bourbon Coffee</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+          <div class="about-card reveal">
+            <div class="about-icon">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-cream-50 mb-3" data-i18n="about.col1.title">Качество</h3>
+            <p class="text-cream-200/60 leading-relaxed" data-i18n="about.col1.desc">Внимание к каждой чашке — от зерна до последнего глотка. Мы ценим вкус и последовательность в каждом напитке.</p>
+          </div>
+
+          <div class="about-card reveal reveal-delay-1">
+            <div class="about-icon">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5a17.92 17.92 0 01-8.716-2.247m0 0A8.966 8.966 0 013 12c0-1.636.393-3.18 1.084-4.542"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-cream-50 mb-3" data-i18n="about.col2.title">Атмосфера</h3>
+            <p class="text-cream-200/60 leading-relaxed" data-i18n="about.col2.desc">Уютное пространство на этаже кинотеатра в 28 Mall — идеальное место для встреч, отдыха и неспешных разговоров.</p>
+          </div>
+
+          <div class="about-card reveal reveal-delay-2">
+            <div class="about-icon">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-cream-50 mb-3" data-i18n="about.col3.title">Сервис</h3>
+            <p class="text-cream-200/60 leading-relaxed" data-i18n="about.col3.desc">Внимательная команда и удобные форматы обслуживания — в зале, навынос или с доставкой до вашего стола.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SERVICES -->
+    <section id="services" class="section-padding relative">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="mb-16 reveal">
+          <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="services.label">Формат</p>
+          <h2 class="font-serif text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="services.title">Как мы работаем</h2>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="service-row grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-20 lg:mb-28 reveal">
+          <div class="service-image-wrapper order-2 lg:order-1">
+            <div class="service-image service-image-1 rounded-3xl"></div>
+          </div>
+          <div class="order-1 lg:order-2">
+            <span class="text-gold-400 text-sm font-medium tracking-widest uppercase" data-i18n="services.row1.label">01</span>
+            <h3 class="font-serif text-3xl lg:text-4xl text-cream-50 mt-3 mb-4" data-i18n="services.row1.title">Еда в заведении</h3>
+            <p class="text-cream-200/60 leading-relaxed text-lg" data-i18n="services.row1.desc">Насладитесь кофе и закусками в комфортном зале на 5 этаже 28 Mall. Спокойная обстановка для работы, встреч и отдыха.</p>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="service-row grid lg:grid-cols-2 gap-10 lg:gap-16 items-center reveal">
+          <div>
+            <span class="text-gold-400 text-sm font-medium tracking-widest uppercase" data-i18n="services.row2.label">02</span>
+            <h3 class="font-serif text-3xl lg:text-4xl text-cream-50 mt-3 mb-4" data-i18n="services.row2.title">Навынос и доставка</h3>
+            <p class="text-cream-200/60 leading-relaxed text-lg" data-i18n="services.row2.desc">Заберите заказ с собой или воспользуйтесь бесконтактной доставкой — быстро, удобно и без лишних хлопот.</p>
+          </div>
+          <div class="service-image-wrapper">
+            <div class="service-image service-image-2 rounded-3xl"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. REVIEWS -->
+    <section id="reviews" class="section-padding relative overflow-hidden">
+      <div class="organic-blob organic-blob-2"></div>
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div class="lg:col-span-4 reveal">
+            <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="reviews.label">Отзывы</p>
+            <div class="rating-display">
+              <span class="rating-number font-serif">4,9</span>
+              <span class="rating-star text-gold-400">★</span>
+            </div>
+            <p class="text-cream-200/60 mt-2 text-lg" data-i18n="reviews.count">из 56 отзывов</p>
+          </div>
+
+          <div class="lg:col-span-8 grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+            <blockquote class="review-card glass-card reveal">
+              <div class="text-gold-400 mb-4 text-lg">★★★★★</div>
+              <p class="text-cream-200/80 text-sm leading-relaxed mb-6" data-i18n="reviews.r1.text">«Отличное место для отдыха с чашкой кофе. Уютно и спокойно.»</p>
+              <footer class="text-cream-50 font-medium text-sm" data-i18n="reviews.r1.author">— Эльвин М.</footer>
+            </blockquote>
+
+            <blockquote class="review-card glass-card reveal reveal-delay-1">
+              <div class="text-gold-400 mb-4 text-lg">★★★★★</div>
+              <p class="text-cream-200/80 text-sm leading-relaxed mb-6" data-i18n="reviews.r2.text">«Внимательный сервис и приятная атмосфера. Обязательно вернусь.»</p>
+              <footer class="text-cream-50 font-medium text-sm" data-i18n="reviews.r2.author">— Лейла К.</footer>
+            </blockquote>
+
+            <blockquote class="review-card glass-card reveal reveal-delay-2">
+              <div class="text-gold-400 mb-4 text-lg">★★★★★</div>
+              <p class="text-cream-200/80 text-sm leading-relaxed mb-6" data-i18n="reviews.r3.text">«Удобное расположение в ТЦ, вкусный кофе и быстрое обслуживание.»</p>
+              <footer class="text-cream-50 font-medium text-sm" data-i18n="reviews.r3.author">— Руслан А.</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. FOOTER -->
+  <footer id="contacts" class="relative border-t border-cream-100/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+        <div class="lg:col-span-2">
+          <h2 class="font-serif text-3xl text-cream-50 mb-3">Bourbon Coffee</h2>
+          <p class="text-cream-200/50 text-sm leading-relaxed max-w-sm" data-i18n="footer.slogan">Где каждая чашка — маленькое удовольствие</p>
+        </div>
+
+        <div>
+          <h3 class="text-gold-400 text-xs tracking-[0.2em] uppercase mb-4" data-i18n="footer.contacts_title">Контакты</h3>
+          <ul class="space-y-3 text-sm text-cream-200/70">
+            <li data-i18n="footer.address">5 этаж ТЦ 28 Mall, пр. Азадлыг 4, Баку</li>
+            <li data-i18n="footer.hours">Открыто до 23:00</li>
+            <li>
+              <a href="tel:+994553390969" class="footer-link">055 339 09 69</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-gold-400 text-xs tracking-[0.2em] uppercase mb-4" data-i18n="footer.social_title">Соцсети</h3>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-link" data-i18n="footer.instagram">Instagram</a>
+            </li>
+            <li>
+              <a href="https://clps.cc" target="_blank" rel="noopener noreferrer" class="footer-link" data-i18n="footer.website">Сайт clps.cc</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-14 pt-8 border-t border-cream-100/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-cream-200/30 text-xs" data-i18n="footer.copyright">© Bourbon Coffee. Все права защищены.</p>
+        <a href="#hero" class="text-cream-200/40 text-xs hover:text-gold-400 transition-colors" data-i18n="footer.back_top">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
