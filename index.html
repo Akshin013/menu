@@ -153,40 +153,16 @@
     <section id="menu" class="section-padding relative">
       <div class="absolute inset-0 bg-gradient-to-b from-coffee-900 via-forest-900/40 to-coffee-900 pointer-events-none"></div>
       <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-        <div class="mb-16 reveal">
-          <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="menu.label">Популярное</p>
-          <h2 class="font-serif text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="menu.title">Меню</h2>
+        <div class="mb-12 lg:mb-16 reveal">
+          <p class="text-gold-400 text-sm tracking-[0.3em] uppercase mb-3" data-i18n="menu.label">Меню</p>
+          <h2 class="font-serif text-4xl lg:text-5xl font-semibold text-cream-50" data-i18n="menu.title">Напитки</h2>
           <p class="mt-4 text-cream-200/60 max-w-xl" data-i18n="menu.subtitle">Средний чек 1–10 ₼ на человека</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <article class="menu-card glass-card reveal cursor-hover">
-            <div class="menu-card-icon">☕</div>
-            <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item1.title">Эспрессо</h3>
-            <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item1.desc">Классический двойной шот из отборных зёрен</p>
-            <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
-          </article>
+        <div id="menu-tabs" class="menu-tabs reveal" role="tablist" aria-label="Menu categories"></div>
 
-          <article class="menu-card glass-card reveal reveal-delay-1 cursor-hover">
-            <div class="menu-card-icon">🥛</div>
-            <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item2.title">Капучино</h3>
-            <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item2.desc">Нежная молочная пена и сбалансированный вкус</p>
-            <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
-          </article>
-
-          <article class="menu-card glass-card reveal reveal-delay-2 cursor-hover">
-            <div class="menu-card-icon">🍫</div>
-            <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item3.title">Латте</h3>
-            <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item3.desc">Мягкий кофе с кремовой текстурой молока</p>
-            <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
-          </article>
-
-          <article class="menu-card glass-card reveal reveal-delay-3 cursor-hover">
-            <div class="menu-card-icon">🧊</div>
-            <h3 class="font-serif text-xl text-cream-50 mb-2" data-i18n="menu.item4.title">Айс-латте</h3>
-            <p class="text-cream-200/60 text-sm leading-relaxed mb-6" data-i18n="menu.item4.desc">Освежающий холодный напиток для любого времени</p>
-            <button class="btn-ghost w-full" data-i18n="menu.order">Заказать</button>
-          </article>
+        <div id="menu-grid-wrapper" class="menu-grid-wrapper">
+          <div id="menu-grid" class="menu-grid" role="tabpanel"></div>
         </div>
       </div>
     </section>

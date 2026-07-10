@@ -15,18 +15,51 @@ const translations = {
     'hero.sound_on': 'Включить звук',
     'hero.sound_off': 'Выключить звук',
 
-    'menu.label': 'Популярное',
-    'menu.title': 'Меню',
+    'menu.label': 'Меню',
+    'menu.title': 'Напитки',
     'menu.subtitle': 'Средний чек 1–10 ₼ на человека',
-    'menu.item1.title': 'Эспрессо',
-    'menu.item1.desc': 'Классический двойной шот из отборных зёрен',
-    'menu.item2.title': 'Капучино',
-    'menu.item2.desc': 'Нежная молочная пена и сбалансированный вкус',
-    'menu.item3.title': 'Латте',
-    'menu.item3.desc': 'Мягкий кофе с кремовой текстурой молока',
-    'menu.item4.title': 'Айс-латте',
-    'menu.item4.desc': 'Освежающий холодный напиток для любого времени',
-    'menu.order': 'Заказать',
+
+    'menu.cat.hot_coffee': 'Горячий кофе',
+    'menu.cat.ice_coffee': 'Холодный кофе',
+    'menu.cat.ice_drinks': 'Холодные напитки',
+    'menu.cat.hot_drinks': 'Горячие напитки',
+    'menu.cat.juice_water': 'Соки и вода',
+
+    'menu.size.s': 'S',
+    'menu.size.l': 'L',
+    'menu.size.small': 'Small',
+    'menu.size.large': 'Large',
+    'menu.size.standard': 'Standard',
+
+    'menu.item.americano': 'Americano',
+    'menu.item.cappuccino': 'Cappuccino',
+    'menu.item.latte': 'Latte',
+    'menu.item.mocha_white': 'Mocha White',
+    'menu.item.mocha_chocolate': 'Mocha Chocolate',
+    'menu.item.berry_mocha': 'Berry Mocha',
+    'menu.item.flat_white': 'Flat White',
+    'menu.item.cortado': 'Cortado',
+    'menu.item.chemex': 'Dəmləmə kofe (Chemex)',
+    'menu.item.ice_americano': 'Ice Americano',
+    'menu.item.ice_cappuccino': 'Ice Cappuccino',
+    'menu.item.ice_latte': 'Ice Latte',
+    'menu.item.ice_mocha': 'Ice Mocha',
+    'menu.item.ice_raf': 'Ice Raf',
+    'menu.item.affogato': 'Affogato',
+    'menu.item.frappe': 'Frappe',
+    'menu.item.milkshake_chocolate': 'Milkshake Chocolate',
+    'menu.item.milkshake_strawberry': 'Milkshake Strawberry',
+    'menu.item.milkshake_banana': 'Milkshake Banana',
+    'menu.item.mojito': 'Mojito (Non-alcoholic)',
+    'menu.item.strawberry_lemonade': 'Strawberry Lemonade',
+    'menu.item.mango_lemonade': 'Mango Lemonade',
+    'menu.item.fruit_ice_tea': 'Special Fruit Ice Tea',
+    'menu.item.berry_ice_tea': 'Berry Ice Tea',
+    'menu.item.lemonade': 'Lemonade',
+    'menu.item.black_tea': 'Black Tea',
+    'menu.item.jasmine_tea': 'Jasmine Tea',
+    'menu.item.sirab_still': 'Sirab şüşə 0.5L (qazsız)',
+    'menu.item.sirab_sparkling': 'Sirab şüşə 0.5L (qazlı)',
 
     'about.label': 'О нас',
     'about.title': 'Почему Bourbon Coffee',
@@ -83,18 +116,51 @@ const translations = {
     'hero.sound_on': 'Səsi yandır',
     'hero.sound_off': 'Səsi söndür',
 
-    'menu.label': 'Məşhur',
-    'menu.title': 'Menyu',
+    'menu.label': 'Menyu',
+    'menu.title': 'İçkilər',
     'menu.subtitle': 'Orta çek 1–10 ₼ adam başına',
-    'menu.item1.title': 'Espresso',
-    'menu.item1.desc': 'Seçilmiş dənələrdən klassik ikiqat şot',
-    'menu.item2.title': 'Kapuçino',
-    'menu.item2.desc': 'Zərif süd köpüyü və balanslı dad',
-    'menu.item3.title': 'Latte',
-    'menu.item3.desc': 'Kremalı süd toxuması ilə yumşaq kofe',
-    'menu.item4.title': 'Ays latte',
-    'menu.item4.desc': 'İstənilən vaxt üçün sərinədirici soyuq içki',
-    'menu.order': 'Sifariş et',
+
+    'menu.cat.hot_coffee': 'İsti kofe',
+    'menu.cat.ice_coffee': 'Soyuq kofe',
+    'menu.cat.ice_drinks': 'Soyuq içkilər',
+    'menu.cat.hot_drinks': 'İsti içkilər',
+    'menu.cat.juice_water': 'Şirə və su',
+
+    'menu.size.s': 'S',
+    'menu.size.l': 'L',
+    'menu.size.small': 'Kiçik',
+    'menu.size.large': 'Böyük',
+    'menu.size.standard': 'Standart',
+
+    'menu.item.americano': 'Americano',
+    'menu.item.cappuccino': 'Kapuçino',
+    'menu.item.latte': 'Latte',
+    'menu.item.mocha_white': 'Ağ Mocha',
+    'menu.item.mocha_chocolate': 'Şokoladlı Mocha',
+    'menu.item.berry_mocha': 'Giləmeyvəli Mocha',
+    'menu.item.flat_white': 'Flat White',
+    'menu.item.cortado': 'Cortado',
+    'menu.item.chemex': 'Dəmləmə kofe (Chemex)',
+    'menu.item.ice_americano': 'Buzlu Americano',
+    'menu.item.ice_cappuccino': 'Buzlu Kapuçino',
+    'menu.item.ice_latte': 'Buzlu Latte',
+    'menu.item.ice_mocha': 'Buzlu Mocha',
+    'menu.item.ice_raf': 'Buzlu Raf',
+    'menu.item.affogato': 'Affogato',
+    'menu.item.frappe': 'Frappe',
+    'menu.item.milkshake_chocolate': 'Şokoladlı Milkshake',
+    'menu.item.milkshake_strawberry': 'Çiyələkli Milkshake',
+    'menu.item.milkshake_banana': 'Bananlı Milkshake',
+    'menu.item.mojito': 'Mojito (Alkoholsuz)',
+    'menu.item.strawberry_lemonade': 'Çiyələkli Limonad',
+    'menu.item.mango_lemonade': 'Manqo Limonad',
+    'menu.item.fruit_ice_tea': 'Xüsusi Meyvəli Buzlu Çay',
+    'menu.item.berry_ice_tea': 'Giləmeyvəli Buzlu Çay',
+    'menu.item.lemonade': 'Limonad',
+    'menu.item.black_tea': 'Qara Çay',
+    'menu.item.jasmine_tea': 'Jasmin Çayı',
+    'menu.item.sirab_still': 'Sirab şüşə 0.5L (qazsız)',
+    'menu.item.sirab_sparkling': 'Sirab şüşə 0.5L (qazlı)',
 
     'about.label': 'Haqqımızda',
     'about.title': 'Niyə Bourbon Coffee',
@@ -168,6 +234,250 @@ function setLanguage(lang) {
 
   document.getElementById('lang-az').classList.toggle('active', lang === 'az');
   document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+
+  refreshMenuUI();
+}
+
+/* ===== Menu Data ===== */
+const menuCategories = [
+  {
+    id: 'hot-coffee',
+    icon: '☕',
+    nameKey: 'menu.cat.hot_coffee',
+    items: [
+      { id: 'americano', nameKey: 'menu.item.americano', image: 'americano,coffee', sizes: [{ key: 's', labelKey: 'menu.size.s', sub: '250 ml', price: '4.50 AZN' }, { key: 'l', labelKey: 'menu.size.l', sub: '340 ml', price: '5.30 AZN' }] },
+      { id: 'cappuccino', nameKey: 'menu.item.cappuccino', image: 'cappuccino', sizes: [{ key: 'small', labelKey: 'menu.size.small', price: '5.30 AZN' }, { key: 'large', labelKey: 'menu.size.large', price: '6.20 AZN' }] },
+      { id: 'latte', nameKey: 'menu.item.latte', image: 'latte,coffee', sizes: [{ key: 'small', labelKey: 'menu.size.small', price: '5.30 AZN' }, { key: 'large', labelKey: 'menu.size.large', price: '6.20 AZN' }] },
+      { id: 'mocha-white', nameKey: 'menu.item.mocha_white', image: 'white-chocolate,mocha', sizes: [{ key: 'small', labelKey: 'menu.size.small', price: '7.10 AZN' }, { key: 'large', labelKey: 'menu.size.large', price: '8.10 AZN' }] },
+      { id: 'mocha-chocolate', nameKey: 'menu.item.mocha_chocolate', image: 'chocolate,mocha', sizes: [{ key: 'small', labelKey: 'menu.size.small', price: '7.10 AZN' }, { key: 'large', labelKey: 'menu.size.large', price: '8.10 AZN' }] },
+      { id: 'berry-mocha', nameKey: 'menu.item.berry_mocha', image: 'berry,mocha', sizes: [{ key: 'small', labelKey: 'menu.size.small', price: '7.10 AZN' }, { key: 'large', labelKey: 'menu.size.large', price: '8.10 AZN' }] },
+      { id: 'flat-white', nameKey: 'menu.item.flat_white', image: 'flat-white,coffee', price: '6.20 AZN', sizeLabelKey: 'menu.size.standard' },
+      { id: 'cortado', nameKey: 'menu.item.cortado', image: 'cortado,coffee', price: '5.40 AZN', sizeLabelKey: 'menu.size.standard' },
+      { id: 'chemex', nameKey: 'menu.item.chemex', image: 'chemex,coffee', price: '6.50 AZN' },
+    ],
+  },
+  {
+    id: 'ice-coffee',
+    icon: '🧊',
+    nameKey: 'menu.cat.ice_coffee',
+    items: [
+      { id: 'ice-americano', nameKey: 'menu.item.ice_americano', image: 'iced,americano', price: '6.00 AZN' },
+      { id: 'ice-cappuccino', nameKey: 'menu.item.ice_cappuccino', image: 'iced,cappuccino', price: '7.50 AZN' },
+      { id: 'ice-latte', nameKey: 'menu.item.ice_latte', image: 'iced,latte', price: '7.50 AZN' },
+      { id: 'ice-mocha', nameKey: 'menu.item.ice_mocha', image: 'iced,mocha', price: '7.70 AZN' },
+      { id: 'ice-raf', nameKey: 'menu.item.ice_raf', image: 'raf,coffee', price: '7.50 AZN' },
+      { id: 'affogato', nameKey: 'menu.item.affogato', image: 'affogato', price: '5.60 AZN' },
+      { id: 'frappe', nameKey: 'menu.item.frappe', image: 'frappe,coffee', price: '8.40 AZN' },
+    ],
+  },
+  {
+    id: 'ice-drinks',
+    icon: '🥤',
+    nameKey: 'menu.cat.ice_drinks',
+    items: [
+      { id: 'milkshake-chocolate', nameKey: 'menu.item.milkshake_chocolate', image: 'milkshake,chocolate', price: '8.90 AZN' },
+      { id: 'milkshake-strawberry', nameKey: 'menu.item.milkshake_strawberry', image: 'milkshake,strawberry', price: '8.90 AZN' },
+      { id: 'milkshake-banana', nameKey: 'menu.item.milkshake_banana', image: 'milkshake,banana', price: '9.20 AZN' },
+      { id: 'mojito', nameKey: 'menu.item.mojito', image: 'mojito,drink', price: '7.70 AZN' },
+      { id: 'strawberry-lemonade', nameKey: 'menu.item.strawberry_lemonade', image: 'strawberry,lemonade', price: '7.30 AZN' },
+      { id: 'mango-lemonade', nameKey: 'menu.item.mango_lemonade', image: 'mango,lemonade', price: '7.30 AZN' },
+      { id: 'fruit-ice-tea', nameKey: 'menu.item.fruit_ice_tea', image: 'fruit,iced-tea', price: '7.50 AZN' },
+      { id: 'berry-ice-tea', nameKey: 'menu.item.berry_ice_tea', image: 'berry,iced-tea', price: '7.50 AZN' },
+      { id: 'lemonade', nameKey: 'menu.item.lemonade', image: 'lemonade', price: '6.90 AZN' },
+    ],
+  },
+  {
+    id: 'hot-drinks',
+    icon: '🍵',
+    nameKey: 'menu.cat.hot_drinks',
+    items: [
+      { id: 'black-tea', nameKey: 'menu.item.black_tea', image: 'black-tea', price: '2.50 AZN' },
+      { id: 'jasmine-tea', nameKey: 'menu.item.jasmine_tea', image: 'jasmine-tea', price: '4.40 AZN' },
+    ],
+  },
+  {
+    id: 'juice-water',
+    icon: '🧃',
+    nameKey: 'menu.cat.juice_water',
+    items: [
+      { id: 'sirab-still', nameKey: 'menu.item.sirab_still', image: 'mineral-water,bottle', price: '2.00 AZN' },
+      { id: 'sirab-sparkling', nameKey: 'menu.item.sirab_sparkling', image: 'sparkling,water,bottle', price: '2.00 AZN' },
+    ],
+  },
+];
+
+let activeMenuCategory = 'hot-coffee';
+let menuRevealDone = false;
+
+function t(key) {
+  return translations[currentLang][key] || translations.ru[key] || key;
+}
+
+function getCategory(id) {
+  return menuCategories.find((cat) => cat.id === id);
+}
+
+function buildMenuItemCard(item, categoryIcon) {
+  const name = t(item.nameKey);
+  const imgUrl = `https://source.unsplash.com/400x400/?${item.image}`;
+
+  let pricingHtml = '';
+  if (item.sizes && item.sizes.length) {
+    const pills = item.sizes.map((size, i) => {
+      const label = t(size.labelKey);
+      const sub = size.sub ? ` (${size.sub})` : '';
+      return `<button type="button" class="size-pill${i === 0 ? ' active' : ''}" data-price="${size.price}" aria-label="${label}${sub}">${label}${sub}</button>`;
+    }).join('');
+    const initialPrice = item.sizes[0].price;
+    pricingHtml = `
+      <div class="menu-item-pricing">
+        <div class="size-pills">${pills}</div>
+        <p class="menu-item-price">${initialPrice}</p>
+      </div>`;
+  } else {
+    pricingHtml = `
+      <div class="menu-item-pricing">
+        <p class="menu-item-price">${item.price}</p>
+      </div>`;
+  }
+
+  return `
+    <article class="menu-item-card glass-card cursor-hover" data-item-id="${item.id}">
+      <div class="menu-item-image rounded-2xl">
+        <img src="${imgUrl}" alt="${name}" loading="lazy" width="400" height="400">
+        <div class="menu-item-image-overlay"></div>
+        <span class="menu-item-cat-icon" aria-hidden="true">${categoryIcon}</span>
+      </div>
+      <div class="menu-item-body">
+        <h3 class="menu-item-name">${name}</h3>
+        ${pricingHtml}
+      </div>
+    </article>`;
+}
+
+function renderMenuTabs() {
+  const tabsEl = document.getElementById('menu-tabs');
+  if (!tabsEl) return;
+
+  tabsEl.innerHTML = menuCategories.map((cat) => `
+    <button
+      type="button"
+      class="menu-tab cursor-hover${cat.id === activeMenuCategory ? ' active' : ''}"
+      role="tab"
+      aria-selected="${cat.id === activeMenuCategory}"
+      data-category="${cat.id}"
+    >
+      <span class="menu-tab-icon" aria-hidden="true">${cat.icon}</span>
+      <span>${t(cat.nameKey)}</span>
+    </button>
+  `).join('');
+}
+
+function renderMenuGrid(animate = false) {
+  const grid = document.getElementById('menu-grid');
+  const category = getCategory(activeMenuCategory);
+  if (!grid || !category) return;
+
+  const html = category.items.map((item) => buildMenuItemCard(item, category.icon)).join('');
+
+  if (!animate || typeof gsap === 'undefined') {
+    grid.innerHTML = html;
+    grid.querySelectorAll('.menu-item-card').forEach((card) => {
+      card.style.opacity = '1';
+    });
+    if (animate) animateMenuCards(false);
+    return;
+  }
+
+  gsap.to(grid, {
+    opacity: 0,
+    y: 12,
+    duration: 0.2,
+    ease: 'power2.in',
+    onComplete: () => {
+      grid.innerHTML = html;
+      gsap.fromTo(grid, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
+      animateMenuCards(true);
+    },
+  });
+}
+
+function animateMenuCards(isTabSwitch) {
+  if (typeof gsap === 'undefined') return;
+
+  const cards = document.querySelectorAll('#menu-grid .menu-item-card');
+  if (!cards.length) return;
+
+  gsap.fromTo(
+    cards,
+    { opacity: 0, y: 28 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.55,
+      stagger: 0.06,
+      ease: 'power3.out',
+      delay: isTabSwitch ? 0.05 : 0,
+    }
+  );
+}
+
+function refreshMenuUI() {
+  const tabsEl = document.getElementById('menu-tabs');
+  if (!tabsEl || !tabsEl.children.length) return;
+  renderMenuTabs();
+  renderMenuGrid(false);
+}
+
+function initMenuTabs() {
+  const tabsEl = document.getElementById('menu-tabs');
+  const grid = document.getElementById('menu-grid');
+  if (!tabsEl || !grid) return;
+
+  renderMenuTabs();
+  renderMenuGrid(false);
+
+  tabsEl.addEventListener('click', (e) => {
+    const tab = e.target.closest('.menu-tab');
+    if (!tab || tab.dataset.category === activeMenuCategory) return;
+
+    activeMenuCategory = tab.dataset.category;
+    tabsEl.querySelectorAll('.menu-tab').forEach((btn) => {
+      const isActive = btn.dataset.category === activeMenuCategory;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive);
+    });
+    renderMenuGrid(true);
+  });
+
+  grid.addEventListener('click', (e) => {
+    const pill = e.target.closest('.size-pill');
+    if (!pill) return;
+
+    const card = pill.closest('.menu-item-card');
+    const pills = card.querySelectorAll('.size-pill');
+    const priceEl = card.querySelector('.menu-item-price');
+
+    pills.forEach((p) => p.classList.remove('active'));
+    pill.classList.add('active');
+    if (priceEl) priceEl.textContent = pill.dataset.price;
+  });
+
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.create({
+      trigger: '#menu',
+      start: 'top 80%',
+      once: true,
+      onEnter: () => {
+        if (!menuRevealDone) {
+          menuRevealDone = true;
+          animateMenuCards(false);
+        }
+      },
+    });
+  } else {
+    animateMenuCards(false);
+  }
 }
 
 /* ===== Custom Cursor ===== */
@@ -187,7 +497,7 @@ function initCustomCursor() {
   let ringX = 0;
   let ringY = 0;
 
-  const hoverTargets = '.cursor-hover, .btn-primary, .btn-secondary, .btn-ghost, .nav-link, .glass-card, .about-card, .lang-btn, .sound-toggle, .mobile-order-btn, .footer-link';
+  const hoverTargets = '.cursor-hover, .btn-primary, .btn-secondary, .btn-ghost, .nav-link, .glass-card, .about-card, .lang-btn, .sound-toggle, .mobile-order-btn, .footer-link, .menu-tab, .menu-item-card, .size-pill';
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -493,6 +803,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('lang-az').addEventListener('click', () => setLanguage('az'));
   document.getElementById('lang-ru').addEventListener('click', () => setLanguage('ru'));
 
+  initMenuTabs();
   initNavbar();
   initMobileMenu();
   initCustomCursor();
